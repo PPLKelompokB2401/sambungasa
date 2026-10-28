@@ -182,37 +182,71 @@
 </section>
 
 <!-- How it works (3 Steps) -->
-<section style="background-color: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 60px 0;">
-    <div class="container text-center" style="max-width: 1000px; text-align: center;">
-        <span class="badge badge-neutral mb-2">Transparansi Penuh</span>
-        <h2 style="font-size: 26px; font-weight: 700; margin-bottom: 12px;">Bagaimana SambungAsa Bekerja?</h2>
-        <p class="text-muted text-sm mb-8" style="max-width: 600px; margin-left: auto; margin-right: auto;">
-            Sistem akuntabilitas tanpa perantara dana: bantuan fisik langsung dikirimkan ke sekolah 3T dengan kode pelacakan resmi.
+<section style="background-color: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 70px 0;">
+    <div class="container text-center" style="max-width: 1100px;">
+        <span class="badge badge-primary mb-2" style="background: rgba(255, 0, 0, 0.1); color: var(--primary); font-size: 11px;">
+            Transparansi Penuh Tanpa Perantara Uang
+        </span>
+        <h2 style="font-size: 30px; font-weight: 700; margin-bottom: 12px; letter-spacing: -0.01em;">
+            Bagaimana SambungAsa Bekerja?
+        </h2>
+        <p class="text-muted text-sm mx-auto mb-8" style="max-width: 620px; font-size: 15px; line-height: 1.6;">
+            Sistem akuntabilitas langsung: bantuan fisik dan misi relawan disalurkan langsung ke alamat sekolah 3T sasaran dengan pelacakan kode unik resmi.
         </p>
 
-        <div class="grid grid-cols-3 gap-6 text-left" style="text-align: left;">
-            <div class="card p-4">
-                <div style="width: 36px; height: 36px; border-radius: 50%; background: var(--primary); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 700; margin-bottom: 16px;">1</div>
-                <h3 style="font-size: 16px; margin-bottom: 8px;">1. Pilih Kebutuhan</h3>
-                <p class="text-sm text-muted">
-                    Telusuri daftar kebutuhan riil yang telah diverifikasi lokasi 3T-nya oleh administrator. Pilih sesuai kapasitas bantuan Anda.
+        <div class="grid grid-cols-3 gap-6 text-left">
+            <!-- Step 1 -->
+            <div class="step-card">
+                <div class="step-card-header">
+                    <span class="step-badge">Langkah 01</span>
+                    <div class="step-icon-wrap" style="background: rgba(255, 0, 0, 0.08); color: var(--primary);">
+                        🔍
+                    </div>
+                </div>
+                <h3 class="step-title">Pilih Kebutuhan Riil</h3>
+                <p class="step-desc">
+                    Telusuri katalog kebutuhan fasilitas, buku, atau pelatihan yang telah diverifikasi lokasi 3T-nya oleh tim kurator. Pilih kebutuhan yang sesuai dengan kapasitas dan kepedulian Anda.
                 </p>
+                <div class="step-footer">
+                    <span style="color: var(--success); font-weight: 700;">✓</span>
+                    <span>Terverifikasi Dapodik & Lokasi 3T</span>
+                </div>
             </div>
 
-            <div class="card p-4">
-                <div style="width: 36px; height: 36px; border-radius: 50%; background: var(--primary); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 700; margin-bottom: 16px;">2</div>
-                <h3 style="font-size: 16px; margin-bottom: 8px;">2. Ajukan Komitmen (Pledge)</h3>
-                <p class="text-sm text-muted">
-                    Ajukan jumlah barang atau kesediaan relawan. Sistem menghasilkan kode pelacakan unik (misal: <code>SA-202610-8841</code>) setelah disetujui admin.
+            <!-- Step 2 -->
+            <div class="step-card">
+                <div class="step-card-header">
+                    <span class="step-badge blue">Langkah 02</span>
+                    <div class="step-icon-wrap" style="background: rgba(6, 95, 212, 0.08); color: var(--secondary);">
+                        📦
+                    </div>
+                </div>
+                <h3 class="step-title">Ajukan Komitmen (Pledge)</h3>
+                <p class="step-desc">
+                    Tentukan jumlah unit barang atau durasi misi relawan. Sistem menghasilkan kode pelacakan unik otomatis (<code class="font-mono" style="background: var(--surface-alt); padding: 2px 6px; border-radius: 4px; font-weight: 700; color: var(--text-primary); font-size: 12px;">SA-202610-XXXX</code>) setelah disetujui admin.
                 </p>
+                <div class="step-footer">
+                    <span style="color: var(--secondary); font-weight: 700;">✓</span>
+                    <span>Terkunci Otomatis Anti Over-Pledge</span>
+                </div>
             </div>
 
-            <div class="card p-4">
-                <div style="width: 36px; height: 36px; border-radius: 50%; background: var(--primary); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 700; margin-bottom: 16px;">3</div>
-                <h3 style="font-size: 16px; margin-bottom: 8px;">3. Salurkan & Pantau Bukti</h3>
-                <p class="text-sm text-muted">
-                    Salurkan barang ke alamat sekolah. Unggah resi dan bukti serah terima (BAST). Pihak sekolah mengonfirmasi penerimaan secara transparan.
+            <!-- Step 3 -->
+            <div class="step-card">
+                <div class="step-card-header">
+                    <span class="step-badge green">Langkah 03</span>
+                    <div class="step-icon-wrap" style="background: rgba(43, 166, 64, 0.08); color: var(--success);">
+                        📑
+                    </div>
+                </div>
+                <h3 class="step-title">Salurkan & Pantau BAST</h3>
+                <p class="step-desc">
+                    Kirim barang langsung ke alamat sekolah. Unggah resi pengiriman dan dokumen Berita Acara Serah Terima (BAST). Pihak sekolah mengonfirmasi penerimaan fisik secara transparan.
                 </p>
+                <div class="step-footer">
+                    <span style="color: var(--success); font-weight: 700;">✓</span>
+                    <span>Konfirmasi BAST & Foto Penyerahan</span>
+                </div>
             </div>
         </div>
     </div>
