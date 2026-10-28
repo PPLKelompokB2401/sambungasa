@@ -73,3 +73,4 @@ Semua perubahan, penambahan fitur, pembaruan skema, dan catatan arsitektur dicat
   - Mengoptimalkan eager-loading `['user', 'province', 'regency']` pada `Admin\DashboardController`.
   - Menambahkan method pembantu publik `getStatusLabel()` pada `Pledge` yang membungkus aksesor `getStatusLabelAttribute()` untuk kompatibilitas pemanggilan method di template Blade.
   - Memperbarui `admin/dashboard.blade.php` dan `public/statistics.blade.php` agar dapat membaca relasi `regency`, `province`, dan `contributorProfile->user->name` secara aman dengan fallback yang kokoh.
+  - Menambahkan registrasi rute `POST /school/needs/{need}/close` (`school.needs.close`) pada [routes/web.php](file:///C:/Users/Dale%20Carnegie/Downloads/SambungAsa/routes/web.php#L95) untuk aksi penutupan kebutuhan sekolah.
