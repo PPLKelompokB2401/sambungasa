@@ -62,3 +62,14 @@ Semua perubahan, penambahan fitur, pembaruan skema, dan catatan arsitektur dicat
 ### Excluded by Scope (Batasan Ruang Lingkup)
 - **F-23 PWA / Offline Functionality:** Secara eksplisit **DITIADAKAN** sesuai instruksi master. Tidak ada service worker, manifest PWA, IndexedDB, atau offline caching.
 - SambungAsa tidak memproses transaksi uang atau *payment gateway*; sistem memfasilitasi komitmen barang fisik dan relawan pendidikan.
+
+---
+
+## [1.0.1] - 2026-10-28
+
+### Fixed (Perbaikan Bug)
+- **Model Relationship & View Accessor Resolusi:**
+  - Menambahkan relasi alias `region()` pada `SchoolProfile` yang mengarah ke `regency_id` (`Region::class`) untuk mencegah `RelationNotFoundException`.
+  - Mengoptimalkan eager-loading `['user', 'province', 'regency']` pada `Admin\DashboardController`.
+  - Menambahkan method pembantu publik `getStatusLabel()` pada `Pledge` yang membungkus aksesor `getStatusLabelAttribute()` untuk kompatibilitas pemanggilan method di template Blade.
+  - Memperbarui `admin/dashboard.blade.php` dan `public/statistics.blade.php` agar dapat membaca relasi `regency`, `province`, dan `contributorProfile->user->name` secara aman dengan fallback yang kokoh.
