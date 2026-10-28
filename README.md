@@ -1,66 +1,143 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# SambungAsa — Menghubungkan Sekolah 3T dengan Bantuan Pendidikan
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+[![Laravel](https://img.shields.io/badge/Laravel-10.x-FF2D20?style=flat&logo=laravel&logoColor=white)](https://laravel.com)
+[![PHP](https://img.shields.io/badge/PHP-8.1%2B-777BB4?style=flat&logo=php&logoColor=white)](https://php.net)
+[![MySQL](https://img.shields.io/badge/MySQL-8.0-4479A1?style=flat&logo=mysql&logoColor=white)](https://mysql.com)
+[![Tests](https://img.shields.io/badge/Tests-40%20Passed%20(125%20assertions)-brightgreen?style=flat)]()
+[![Design](https://img.shields.io/badge/Design-Red%20Broadcast-red?style=flat)]()
 
-## About Laravel
+**SambungAsa** adalah aplikasi web responsif yang menghubungkan sekolah-sekolah di wilayah **3T (Tertinggal, Terdepan, dan Terluar)** di Indonesia — khususnya Papua, Kalimantan, dan Sulawesi — dengan donatur, relawan pengajar, dan organisasi bantuan pendidikan secara langsung, transparan, dan akuntabel.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+> ⚠️ **Catatan Penting Ruang Lingkup:**
+> SambungAsa **bukan marketplace** dan **tidak memproses transaksi keuangan / uang tunai**. Platform ini memfasilitasi komitmen bantuan fisik dan misi relawan melalui Berita Acara Serah Terima (BAST) dan pelacakan digital.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+---
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## 🚀 Fitur Utama
 
-## Learning Laravel
+- **F-01 Wilayah 3T Terintegrasi:** Data referensi resmi provinsi dan kabupaten 3T (Papua, Kalimantan, Sulawesi).
+- **F-02 Registrasi Multi-Peran:** Pendaftaran khusus Sekolah 3T, Donatur Pribadi, Relawan Pendidikan, dan Organisasi / Korporasi.
+- **F-03 Autentikasi & RBAC:** Proteksi rute berbasis peran (Admin, Sekolah, Donatur/Relawan) dan pembatasan status akun aktif.
+- **F-04 Verifikasi Sekolah 3T:** Kurasi dan validasi keabsahan data sekolah (NPSN, koordinat geografis 3T, SK pendirian).
+- **F-05 Pengajuan Kebutuhan Sekolah:** Formulir kebutuhan material (buku, komputer, fasilitas) dan non-material (relawan pengajar, pelatihan).
+- **F-06 Moderasi Kebutuhan:** Validasi kebutuhan oleh administrator sebelum dipublikasikan ke direktori publik.
+- **F-07 Penutupan & Update Kebutuhan:** Kontrol kuota kebutuhan dan penutupan penerimaan bantuan jika sudah terpenuhi.
+- **F-08 Katalog Kebutuhan Publik:** Pencarian terfilter berdasarkan pulau, provinsi, kategori, prioritas, dan kata kunci.
+- **F-09 Direktori Sekolah 3T:** Profil profil sekolah penerima manfaat dan riwayat kebutuhan yang diajukan.
+- **F-10 Komitmen Bantuan (Pledge):** Form pengajuan komitmen barang/relawan dengan estimasi waktu dan catatan kargo.
+- **F-11 Pencegahan Over-Pledging:** Penguncian transaksi database (*pessimistic locking*) agar bantuan tidak melebihi kuota.
+- **F-12 Pelacakan Status & Kode Unik:** Kode tracking unik `SA-YYYYMM-XXXX` dengan riwayat log perjalanan.
+- **F-13 Bukti Penyaluran Privat & Aman:** Unggah bukti resi, foto serah terima, dan dokumen BAST yang dilindungi otorisasi IDOR.
+- **F-14 Konfirmasi Penerimaan Sekolah:** Validasi penerimaan fisik oleh pihak sekolah dengan catatan kondisi barang.
+- **F-15 Pembaruan Otomatis Kebutuhan:** Update kuantitas terpenuhi secara otomatis ketika penyaluran diselesaikan.
+- **F-16 & F-17 Transparansi & Statistik Dampak:** Metrik capaian nyata dari basis data (sekolah terverifikasi, persentase pemenuhan kategori, sebaran wilayah).
+- **F-19 & F-20 Manajemen Akun & Moderasi Admin:** Kontrol pengguna, suspend/aktivasi akun, dan antrean kurasi.
+- **F-21 Notifikasi In-App:** Pembaruan status secara langsung bagi donatur dan sekolah di dashboard.
+- **F-22 Laporan & Ekspor CSV:** Unduh rekapitulasi penyaluran bantuan terformat CSV dengan sanitasi anti-formula injection.
+- **F-24 Audit Trail (Activity Logs):** Pencatatan menyeluruh setiap aksi penting pengguna dan administrator.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+---
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## 🎨 Sistem Desain: Red Broadcast
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Aplikasi ini menggunakan sistem desain murni CSS **Red Broadcast** (`public/css/sambungasa.css`):
+- **Warna Identitas:** Broadcast Red (`#FF0000`), Dark `#0F0F0F`, Link Blue `#065FD4`, Gray 600 `#606060`.
+- **Tipografi:** Google Font Roboto (400, 500, 700) & Roboto Mono untuk kode tracking.
+- **Komponen:** Tombol kapsul (*pill buttons* `border-radius: 9999px`), chip bar, elevasi bertingkat, dan KPI card grid responsif.
 
-## Laravel Sponsors
+---
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## 🛠️ Prasyarat & Lingkungan
 
-### Premium Partners
+- **PHP:** >= 8.1
+- **Composer:** >= 2.0
+- **MySQL / MariaDB:** >= 8.0 (atau 10.4+)
+- **Laravel Framework:** 10.x
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+---
 
-## Contributing
+## 📦 Instalasi & Menjalankan Proyek
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+1. **Clone Repositori:**
+   ```bash
+   git clone https://github.com/PPLKelompokB2401/sambungasa.git
+   cd sambungasa
+   ```
 
-## Code of Conduct
+2. **Instal Dependensi:**
+   ```bash
+   composer install
+   ```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+3. **Konfigurasi Lingkungan (.env):**
+   ```bash
+   cp .env.example .env
+   php artisan key:generate
+   ```
+   Sesuaikan konfigurasi koneksi database MySQL:
+   ```env
+   DB_CONNECTION=mysql
+   DB_HOST=127.0.0.1
+   DB_PORT=3306
+   DB_DATABASE=sambungasa
+   DB_USERNAME=root
+   DB_PASSWORD=
+   ```
 
-## Security Vulnerabilities
+4. **Jalankan Migrasi & Seeder Data:**
+   ```bash
+   php artisan migrate:fresh --seed
+   ```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+5. **Tautkan Storage:**
+   ```bash
+   php artisan storage:link
+   ```
 
-## License
+6. **Jalankan Server Lokal:**
+   ```bash
+   php artisan serve --port=8000
+   ```
+   Buka `http://127.0.0.1:8000` di peramban.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+---
+
+## 👥 Akun Demo untuk Pengujian
+
+Semua akun demo menggunakan kata sandi: `password`
+
+| Peran (Role) | Email | Keterangan |
+| :--- | :--- | :--- |
+| **Administrator** | `admin@sambungasa.id` | Akses penuh dashboard admin, moderasi, dan laporan |
+| **Sekolah 3T (Terverifikasi)** | `sdn.waisilip@sambungasa.sch.id` | SD Inpres Waisilip, Kabupaten Puncak, Papua |
+| **Sekolah 3T (Pending)** | `smpn.krayan@sambungasa.sch.id` | SMPN 1 Krayan, Nunukan, Kalimantan Utara |
+| **Donatur (Individu)** | `budi.donatur@example.org` | Memiliki komitmen bantuan aktif dan riwayat tracking |
+| **Relawan (Volunteer)** | `siti.relawan@example.org` | Memiliki riwayat komitmen pelatihan guru relawan |
+
+---
+
+## 🧪 Pengujian Otomatis (Automated Testing)
+
+Jalankan test suite menggunakan PHPUnit:
+
+```bash
+php artisan test
+```
+
+**Hasil Pengujian:**
+- Total Tes: **40 passed**
+- Total Asersi: **125 assertions**
+- Lingkup Uji:
+  - `AuthTest`: Registrasi multi-peran, autentikasi, dan kontrol akses peran.
+  - `NeedManagementTest`: Validasi verifikasi sekolah, pembuatan kebutuhan, moderasi admin, dan penutupan.
+  - `PledgeFlowTest`: Pengajuan bantuan, kode tracking unik, pencegahan over-pledging, dan konfirmasi serah terima.
+  - `SchoolVerificationTest`: Verifikasi sekolah 3T, penolakan, dan permintaan revisi.
+  - `EvidenceSecurityTest`: Validasi berkas bukti privat, pembatasan ekstensi, dan perlindungan IDOR.
+  - `StatisticsAndReportTest`: Agregasi metrik riil database, laporan admin, dan ekspor CSV aman.
+
+---
+
+## 📄 Lisensi & Tim Pengembang
+
+Dikembangkan oleh **PPL Kelompok B2401** untuk mendukung pendidikan di kawasan 3T Indonesia.
+Lisensi kode terbuka di bawah [MIT License](LICENSE).
