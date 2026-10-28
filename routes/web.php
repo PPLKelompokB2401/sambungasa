@@ -92,6 +92,7 @@ Route::middleware(['auth', 'role:school', 'active'])->prefix('school')->name('sc
 
     // Needs CRUD (F-05, F-06, F-07)
     Route::resource('needs', SchoolNeedController::class);
+    Route::post('/needs/{need}/close', [SchoolNeedController::class, 'close'])->name('needs.close');
 
     // Incoming Pledges, Receipt & Tracking (F-14, F-15)
     Route::get('/pledges', [SchoolPledgeController::class, 'index'])->name('pledges.index');

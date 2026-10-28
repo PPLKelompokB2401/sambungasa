@@ -215,4 +215,32 @@ class NeedManagementTest extends TestCase
         $response = $this->actingAs($this->verifiedSchoolUser)->get("/school/needs/{$need->id}/edit");
         $response->assertStatus(403);
     }
+
+    public function test_school_can_view_needs_list_and_close_need()
+    {
+        $need = Need::create([
+            'school_profile_id' => $this->verifiedSchool->id,
+            'need_category_id' => $this->category->id,
+            'title' => 'Seragam Sekolah Murid 3T',
+            'description' => 'Bantuan seragam sekolah merah putih untuk murid baru.',
+            'assistance_type' => 'material',
+            'priority' => 'sedang',
+            'quantity_required' => 50,
+            'status' => 'published',
+        ]);
+
+        // Render index page
+        $indexResponse = $this->actingAs($this->verifiedSchoolUser)->get('/school/needs');
+        $indexResponse->assertStatus(200);
+        $indexResponse->assertSee('Seragam Sekolah Murid 3T');
+
+        // Close the need
+        $closeResponse = $this->actingAs($this->verifiedSchoolUser)->post("/school/needs/{$need->id}/close");
+        $closeResponse->assertRedirect();
+
+        $this->assertDatabaseHas('needs', [
+            'id' => $need->id,
+            'status' => 'closed',
+        ]);
+    }
 }
