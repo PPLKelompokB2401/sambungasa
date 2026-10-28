@@ -28,7 +28,7 @@ class DashboardController extends Controller
             'total_users' => User::count(),
         ];
 
-        $pendingVerifications = SchoolProfile::with(['user', 'region'])
+        $pendingVerifications = SchoolProfile::with(['user', 'province', 'regency'])
             ->where('verification_status', 'pending')
             ->latest()
             ->take(5)

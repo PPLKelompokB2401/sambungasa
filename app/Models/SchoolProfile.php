@@ -56,6 +56,11 @@ class SchoolProfile extends Model
         return $this->belongsTo(Region::class, 'regency_id');
     }
 
+    public function region(): BelongsTo
+    {
+        return $this->belongsTo(Region::class, 'regency_id');
+    }
+
     public function verifier(): BelongsTo
     {
         return $this->belongsTo(User::class, 'verified_by');

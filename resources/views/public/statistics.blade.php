@@ -151,12 +151,12 @@
                                 {{ Str::limit($p->need->title ?? '-', 45) }}
                             </h3>
                             <div class="text-xs text-muted mb-2">
-                                🏫 {{ $p->need->schoolProfile->school_name ?? '-' }} ({{ $p->need->schoolProfile->region->regency_name ?? '-' }})
+                                🏫 {{ $p->need->schoolProfile->school_name ?? '-' }} ({{ $p->need->schoolProfile->regency->name ?? ($p->need->schoolProfile->province->name ?? '-') }})
                             </div>
                             <div style="font-size: 12px; background: var(--surface-alt); padding: 6px 10px; border-radius: 6px;">
                                 <strong>Jumlah:</strong> {{ $p->quantity }} {{ $p->need->unit ?? 'unit' }}
                                 <br>
-                                <span class="text-muted">Oleh: {{ $p->contributor->name ?? 'Donatur SambungAsa' }}</span>
+                                <span class="text-muted">Oleh: {{ $p->contributorProfile->user->name ?? 'Donatur SambungAsa' }}</span>
                             </div>
                         </div>
                     @endforeach

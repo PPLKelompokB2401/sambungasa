@@ -73,8 +73,8 @@
                                         <div class="text-xs text-muted">NPSN: {{ $school->npsn }}</div>
                                     </td>
                                     <td>
-                                        <div>{{ $school->region->regency_name ?? '-' }}</div>
-                                        <div class="text-xs text-muted">{{ $school->region->province_name ?? '-' }}</div>
+                                        <div>{{ $school->regency->name ?? ($school->region->name ?? '-') }}</div>
+                                        <div class="text-xs text-muted">{{ $school->province->name ?? ($school->regency->island ?? '-') }}</div>
                                     </td>
                                     <td class="text-xs text-muted">{{ $school->created_at->diffForHumans() }}</td>
                                     <td>
@@ -167,7 +167,7 @@
                                 <tr>
                                     <td>
                                         <div class="font-mono font-bold text-xs">{{ $pledge->tracking_code }}</div>
-                                        <div class="text-xs text-muted">{{ $pledge->contributor->name ?? 'Anonim' }}</div>
+                                        <div class="text-xs text-muted">{{ $pledge->contributorProfile->user->name ?? ($pledge->contributorProfile->organization_name ?? 'Donatur') }}</div>
                                     </td>
                                     <td>
                                         <div class="text-sm font-semibold">{{ Str::limit($pledge->need->title ?? '-', 22) }}</div>

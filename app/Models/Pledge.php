@@ -42,6 +42,11 @@ class Pledge extends Model
         return $this->belongsTo(ContributorProfile::class);
     }
 
+    public function contributor(): BelongsTo
+    {
+        return $this->belongsTo(ContributorProfile::class, 'contributor_profile_id');
+    }
+
     public function reviewer(): BelongsTo
     {
         return $this->belongsTo(User::class, 'reviewed_by');
@@ -69,6 +74,11 @@ class Pledge extends Model
             'cancelled' => 'Dibatalkan',
             default => ucfirst($this->status),
         };
+    }
+
+    public function getStatusLabel(): string
+    {
+        return $this->getStatusLabelAttribute();
     }
 
     public function getAllowedNextStatuses(): array
