@@ -141,3 +141,7 @@ php artisan test
 
 Dikembangkan oleh **PPL Kelompok B2401** untuk mendukung pendidikan di kawasan 3T Indonesia.
 Lisensi kode terbuka di bawah [MIT License](LICENSE).
+
+Nama Anggota : 
+Dale Carnegie - 102042400110
+Adryla Rahmadani - 102042400081
